@@ -1,5 +1,12 @@
+import fs from "fs";
+
 const read = async () => {
-    // Write your code here 
+  const readableStream = fs.createReadStream(
+    "src/streams/files/fileToRead.txt",
+    "utf8"
+  );
+
+  readableStream.pipe(process.stdout);
 };
 
 await read();
